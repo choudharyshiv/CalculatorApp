@@ -7,8 +7,8 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 var input :String=""
-    val textInput : TextView by lazy { findViewById(R.id.txtInput) }
-    val one : Button by lazy { findViewById(R.id.btnOne) }
+    private val textInput : TextView by lazy { findViewById(R.id.txtInput) }
+    private val one : Button by lazy { findViewById(R.id.btnOne) }
     private val two: Button by lazy { findViewById(R.id.btnTwo) }
     private val three: Button by lazy { findViewById(R.id.btnThree) }
     private val four: Button by lazy { findViewById(R.id.btnFour) }
@@ -114,25 +114,30 @@ private fun calculate()
                 if(input[operatorIdx]=='+')
                 {
                     result = firstValue + secondValue
+
                 }
 
                 if (input[operatorIdx]=='*')
                 {
 
                     result = firstValue * secondValue
+
                 }
 
                  if (input[operatorIdx]=='/')
                 {
                     result = firstValue / secondValue
+
                 }
                  if(input[operatorIdx]=='-')
                 {
                     result = firstValue - secondValue
+
                 }
 
 
 textSolution.text=result.toString()
+        input=result.toString()
 
 
     }
